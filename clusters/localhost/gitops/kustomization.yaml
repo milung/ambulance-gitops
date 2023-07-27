@@ -7,7 +7,7 @@ commonLabels:
 namespace: wac-hospital
 
 resources:
-- prepare.kustomization.yaml
+#- prepare.kustomization.yaml
 - cd.kustomization.yaml
 - install.kustomization.yaml
 - git-repository.yaml

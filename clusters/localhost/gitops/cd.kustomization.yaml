@@ -6,7 +6,7 @@ metadata:
 spec:
   wait: true
   interval: 42s
-  path: clusters/localhost/gitops
+  path: clusters/localhost
   prune: true
   sourceRef:
     kind: GitRepository
