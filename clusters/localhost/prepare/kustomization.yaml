@@ -10,5 +10,5 @@ commonLabels:
   app.kubernetes.io/part-of: wac-hospital
 
    
-patches: 
-- path: patches/ufe-controller.service.yaml    # úprava služby ufe-controller
+# patches: 
+# - path: patches/ufe-controller.service.yaml    # úprava služby ufe-controller
