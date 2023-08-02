@@ -9,5 +9,5 @@ spec:
   filterTags:
     pattern: "main.*" # vyberie všetky verzie, ktoré začínajú na main- (napr. main-20240315.1200)
   policy:
-    numerical:
+    alphabetical:
       order: asc
