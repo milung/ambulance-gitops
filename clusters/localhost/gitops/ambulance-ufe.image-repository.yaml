@@ -4,5 +4,5 @@ metadata:
   name: ambulance-ufe # @_pfx_@
   namespace: wac-hospital
 spec:
-  image: <vase-docker-id>/ambulance-ufe
+  image: milung/ambulance-ufe # @_pfx_@
   interval: 1m0s
