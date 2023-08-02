@@ -8,3 +8,8 @@ commonLabels:
 
 resources:
 - ../../../apps/milung-ambulance-ufe
+
+
+components: 
+- ../../../components/version-developers
+
