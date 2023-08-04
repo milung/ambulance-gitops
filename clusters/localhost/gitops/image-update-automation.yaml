@@ -16,7 +16,20 @@ spec:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcd_bot
-      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+      messageTemplate: |
+      Automated image update
+      
+      Automation name: {{ .AutomationObject }}
+      
+      Files:
+      {{ range $filename, $_ := .Updated.Files -}}
+      - {{ $filename }}
+      {{ end -}}
+      
+      Images:
+      {{ range .Updated.Images -}}
+      - {{.}}
+      {{ end -}}      
     push:
       branch: main
   update:
