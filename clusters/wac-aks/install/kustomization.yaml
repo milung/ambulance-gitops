@@ -1,0 +1,34 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: wac-hospital
+
+commonLabels:
+  app.kubernetes.io/part-of: wac-hospital
+  app.kubernetes.io/name: pfx-ambulance-wl
+
+resources:
+- ../../../apps/milung-ambulance-ufe
+
+
+components: 
+- ../../../components/version-release
+
+replacements: 
+  - targets:
+    - select: 
+        group: fe.milung.eu
+        version: v1 
+        kind: WebComponent
+        name: milung-ambulance-ufe 
+      fieldPaths:
+        - spec.hash-suffix
+    source: 
+      version: v1
+      kind: Deployment
+      name:  milung-ambulance-ufe-deployment  
+      namespace: wac-hospital
+      fieldPath: spec.template.spec.containers.0.image
+      options: 
+        delimiter: ':'
+        index: 1

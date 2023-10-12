@@ -8,8 +8,13 @@ commonLabels:
 
 resources:
 - ../../../apps/milung-ambulance-ufe
+- ../../../apps/milung-ambulance-webapi
 
 
 components: 
 - ../../../components/version-developers
+-  https://github.com/milung/ambulance-webapi//deploy/manifests/components/mongodb
 
+patches:
+  - path: patches/ambulance-webapi.service.yaml
+    
