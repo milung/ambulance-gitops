@@ -13,7 +13,7 @@ resources:
 
 components: 
 - ../../../components/version-developers
--  https://github.com/milung/ambulance-webapi//deploy/manifests/components/mongodb
+-  https://github.com/milung/ambulance-webapi//deployments/kustomize/components/mongodb
 
 patches:
   - path: patches/ambulance-webapi.service.yaml
