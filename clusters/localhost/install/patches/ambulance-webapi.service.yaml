@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: pfx-ambulance-webapi
+  name: milung-ambulance-webapi
 spec:  
   ports:
   - name: http
