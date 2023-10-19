@@ -1,8 +1,8 @@
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: Gateway
 metadata:
-  name: wac-hospital
-  namespace: wac-hospital-gateway
+  name: wac-hospital-gateway
+  namespace: wac-hospital
 spec:
   gatewayClassName: wac-hospital-gateway-class
   listeners:
