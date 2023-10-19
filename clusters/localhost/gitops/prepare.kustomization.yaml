@@ -4,7 +4,6 @@ metadata:
   name: prepare
   namespace: wac-hospital
 spec:
- #  wait: true
   healthChecks:
     - apiVersion: apps/v1
       kind: Deployment

@@ -7,8 +7,8 @@ commonLabels:
   app.kubernetes.io/part-of: wac-hospital
 
 resources:
-- ../../../apps/milung-ambulance-ufe
-- ../../../apps/milung-ambulance-webapi
+- ../../../apps/pfx-ambulance-ufe
+- ../../../apps/pfx-ambulance-webapi
 
 
 components: 

@@ -13,22 +13,3 @@ resources:
 
 components: 
 - ../../../components/version-release
-
-replacements: 
-  - targets:
-    - select: 
-        group: fe.milung.eu
-        version: v1 
-        kind: WebComponent
-        name: milung-ambulance-ufe 
-      fieldPaths:
-        - spec.hash-suffix
-    source: 
-      version: v1
-      kind: Deployment
-      name:  milung-ambulance-ufe-deployment  
-      namespace: wac-hospital
-      fieldPath: spec.template.spec.containers.0.image
-      options: 
-        delimiter: ':'
-        index: 1

@@ -8,4 +8,4 @@ resources:
 - ../../../infrastructure/envoy-gateway
   
 patches: 
- - path: patches/ufe-controller.service.yaml    # úprava služby ufe-controller
+- path: patches/ufe-controller.service.yaml    # úprava služby ufe-controller
