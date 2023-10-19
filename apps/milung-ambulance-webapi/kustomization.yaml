@@ -3,4 +3,6 @@ kind: Kustomization
 
 resources:
 - 'https://github.com/milung/ambulance-webapi//deployments/kustomize/install' # ?ref=v1.0.1
+- openapi.service.yaml
+- http-route.yaml
 

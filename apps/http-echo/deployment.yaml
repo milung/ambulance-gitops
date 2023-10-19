@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:  
+  name: http-echo
+  annotations: 
+    linkerd.io/inject: ingress
+spec:
+  replicas: 1  
+  selector:
+    matchLabels:
+      pod: http-echo
+  template:
+    metadata:
+      labels: 
+        pod: http-echo 
+    spec:
+      containers:
+      - image: mendhak/http-https-echo
+        name: http-echo        
+        ports:
+        - name: http
+          containerPort: 80
+        resources:
+          limits:
+            cpu: '0.1'
+            memory: '128M'
+          requests:
+            cpu: '0.01'
+            memory: '16M'

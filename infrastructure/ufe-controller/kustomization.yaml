@@ -3,8 +3,12 @@ kind: Kustomization
 
 resources:
 - https://github.com/milung/ufe-controller//configs/k8s/kustomize
+- http-route.yaml
 
 
 namespace: wac-hospital
 commonLabels:
   app: micro-fe
+
+patches: 
+- path: patches/ufe-controller.deployment.yaml
