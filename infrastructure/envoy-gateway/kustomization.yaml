@@ -5,4 +5,3 @@ resources:
 - https://github.com/envoyproxy/gateway/releases/download/latest/install.yaml
 - gateway-class.yaml
 - gateway.yaml
-- http-route.yaml
