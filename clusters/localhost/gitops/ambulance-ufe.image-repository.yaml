@@ -1,8 +1,8 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
-  name: ambulance-ufe # @_pfx_@
+  name: ambulance-ufe
   namespace: wac-hospital
 spec:
-  image: milung/ambulance-ufe # @_pfx_@
+  image: milung/ambulance-ufe 
   interval: 1m0s
