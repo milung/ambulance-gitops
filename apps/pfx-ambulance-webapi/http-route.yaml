@@ -24,7 +24,7 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /openapi
+            value: /openapi-ui
       filters:
       - type: URLRewrite
         urlRewrite:
