@@ -11,7 +11,7 @@ spec:
             type: PathPrefix
             value: /ui
       filters:
-      - type: RequestHeaderModifier
+      - type: ResponseHeaderModifier
         responseHeaderModifier:
           remove: 
           - content-security-policy
