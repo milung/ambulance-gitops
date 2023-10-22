@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: milung-openapi
+  name: milung-openapi-ui
 spec:  
   selector:
     pod: milung-ambulance-webapi-label

@@ -24,22 +24,16 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /openapi-ui
-      filters:
-      - type: URLRewrite
-        urlRewrite:
-          path: 
-            type: ReplacePrefixMatch
-            replacePrefixMatch: /openapi-ui
+            value: /milung-openapi-ui
       backendRefs:
         - group: ""
           kind: Service
-          name: milung-openapi
+          name: milung-openapi-ui
           port: 80
     - matches:
         - path:
             type: Exact
-            value: /openapi
+            value: /milung-openapi
       filters: 
       - type: URLRewrite
         urlRewrite:
