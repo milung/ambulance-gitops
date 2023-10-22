@@ -13,6 +13,7 @@ spec:
       filters: 
       - type: URLRewrite
         path:
+          type: ReplacePrefixMatch
           replacePrefixMatch: /api
       backendRefs:
         - group: ""
@@ -25,7 +26,8 @@ spec:
             value: /openapi
       filters:
       - type: URLRewrite
-        path:
+        path: 
+          type: ReplacePrefixMatch
           replacePrefixMatch: /openapi-ui
       backendRefs:
         - group: ""

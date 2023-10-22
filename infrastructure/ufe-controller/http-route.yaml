@@ -10,11 +10,11 @@ spec:
         - path:
             type: PathPrefix
             value: /ui
-      filters:
-      - type: ResponseHeaderModifier
-        responseHeaderModifier:
-          remove: 
-          - Content-Security-Policy
+      # filters:
+      # - type: ResponseHeaderModifier
+      #   responseHeaderModifier:
+      #     remove: 
+      #     - Content-Security-Policy
       backendRefs:
         - group: ""
           kind: Service
