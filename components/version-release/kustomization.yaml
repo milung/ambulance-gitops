@@ -3,7 +3,11 @@ kind: Component
 images:
 - name: milung/ambulance-ufe
   newName: milung/ambulance-ufe 
-  newTag: 1.0.0
+  newTag: 1.1.0
+- name: milung/ambulance-wl-webapi
+  newName: milung/ambulance-wl-webapi
+  newTag: 1.1.0
+
 
 replacements: 
   - targets:

@@ -14,6 +14,7 @@ spec:
         - group: ""
           kind: Service
           name: ufe-controller
+          namespace: wac-hospital
           port: 80
       
     - matches:
