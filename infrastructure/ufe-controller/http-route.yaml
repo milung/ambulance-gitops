@@ -13,7 +13,7 @@ spec:
       backendRefs:
         - group: ""
           kind: Service
-          name: ufe-controller
+          name: http-echo
           namespace: wac-hospital
           port: 80
       
