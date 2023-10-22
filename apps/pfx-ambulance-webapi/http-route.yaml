@@ -36,3 +36,18 @@ spec:
           kind: Service
           name: milung-openapi
           port: 80
+    - matches:
+        - path:
+            type: Exact
+            value: /.openapi/
+      filters: 
+      - type: URLRewrite
+        urlRewrite:
+          path:
+            type: ReplaceFullPath
+            replaceFullPath: /.openapi/
+      backendRefs:
+        - group: ""
+          kind: Service
+          name: milung-ambulance-webapi
+          port: 80
