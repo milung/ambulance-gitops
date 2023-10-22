@@ -39,13 +39,13 @@ spec:
     - matches:
         - path:
             type: Exact
-            value: /.openapi/
+            value: /openapi
       filters: 
       - type: URLRewrite
         urlRewrite:
           path:
             type: ReplaceFullPath
-            replaceFullPath: /.openapi/
+            replaceFullPath: /openapi
       backendRefs:
         - group: ""
           kind: Service
