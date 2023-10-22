@@ -9,7 +9,11 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /api
+            value: /milung-api
+      filters: 
+      - type: URLRewrite
+        path:
+          replacePrefixMatch: /api
       backendRefs:
         - group: ""
           kind: Service
@@ -19,6 +23,10 @@ spec:
         - path:
             type: PathPrefix
             value: /openapi
+      filters:
+      - type: URLRewrite
+        path:
+          replacePrefixMatch: /openapi-ui
       backendRefs:
         - group: ""
           kind: Service
