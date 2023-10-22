@@ -10,3 +10,4 @@ images:
 - name: milung/ufe-controller
   newName: milung/ufe-controller # {"$imagepolicy":  "wac-hospital:ufe-controller:name"}
   newTag: 1.6.4 # {"$imagepolicy": "wac-hospital:ufe-controller:tag"}
+  
