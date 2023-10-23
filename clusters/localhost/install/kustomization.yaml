@@ -9,8 +9,8 @@ commonLabels:
 resources:
 - ../../../apps/pfx-ambulance-ufe
 - ../../../apps/pfx-ambulance-webapi
+- ../../../apps/mongo-express
 - ../../../apps/http-echo
-
 
 components: 
 - ../../../components/version-developers
@@ -18,4 +18,3 @@ components:
 
 patches:
   - path: patches/ambulance-webapi.service.yaml
-    

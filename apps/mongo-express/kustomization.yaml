@@ -1,3 +1,5 @@
+
+
 resources: 
 - deployment.yaml
 - service.yaml
@@ -6,4 +8,4 @@ resources:
 namespace: wac-hospital
 
 commonLabels: 
-  app.kubernetes.io/component: http-echo
+  app.kubernetes.io/component: mongo-express

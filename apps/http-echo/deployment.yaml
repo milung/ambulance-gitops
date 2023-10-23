@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:  
   name: http-echo
-  annotations: 
-    linkerd.io/inject: ingress
 spec:
   replicas: 1  
   selector:
