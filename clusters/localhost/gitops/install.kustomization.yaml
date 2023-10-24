@@ -5,6 +5,7 @@ metadata:
   namespace: wac-hospital
 spec:
   wait: true
+  force: true
   dependsOn: 
   - name:  prepare
   interval: 42s
