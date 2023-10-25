@@ -34,6 +34,11 @@ spec:
             configMapKeyRef:
               name: mongodb-connection
               key: host
+        # patch with cluster specific secret on the target cluster
+        - name: ME_CONFIG_BASICAUTH_USERNAME
+          value: ""
+        - name: ME_CONFIG_BASICAUTH_PASSWORD
+          value: ""
         ports:
         - name: http
           containerPort: 8081
