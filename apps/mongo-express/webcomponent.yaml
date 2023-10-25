@@ -1,7 +1,7 @@
 apiVersion: fe.milung.eu/v1
 kind: WebComponent
 metadata: 
-  name: milung-ambulance-ufe
+  name: mongo-express
 spec:
   module-uri: built-in
   navigation:
