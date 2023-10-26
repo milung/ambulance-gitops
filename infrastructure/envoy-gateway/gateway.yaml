@@ -18,8 +18,8 @@ spec:
     - name: http
       protocol: HTTP
       port: 80
-    - hostname: wac-hospital.localhost
-      name: https
+    - hostname: wac-hospital.loc
+      name: https-dns
       protocol: HTTPS
       port: 443
       tls:
@@ -28,7 +28,7 @@ spec:
         - kind: Secret
           name: wac-hospital-tls
     - hostname: localhost
-      name: https
+      name: https-localhost
       protocol: HTTPS
       port: 443
       tls:
