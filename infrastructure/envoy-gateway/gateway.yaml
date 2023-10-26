@@ -24,12 +24,16 @@ spec:
       port: 443
       tls:
         mode: Terminate
-        credentialName: wac-hospital-tls
+        certificateRefs:
+        - kind: Secret
+          name: wac-hospital-tls
     - hostname: localhost
       name: https
       protocol: HTTPS
       port: 443
       tls:
         mode: Terminate
-        credentialName: wac-hospital-tls
+        certificateRefs:
+        - kind: Secret
+          name: wac-hospital-tls
   
