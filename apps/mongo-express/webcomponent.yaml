@@ -12,3 +12,4 @@ spec:
       attributes:
         - name: src
           value: /mongo-express
+
