@@ -5,3 +5,10 @@ resources:
 - https://github.com/envoyproxy/gateway/releases/download/latest/install.yaml
 - gateway-class.yaml
 - gateway.yaml
+
+configMapGenerator:
+  - name: envoy-gateway-config
+    namespace: envoy-gateway-system
+    behavior: replace
+    files:
+      - params/envoy-gateway.yaml
