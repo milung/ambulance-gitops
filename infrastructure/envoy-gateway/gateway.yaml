@@ -19,7 +19,7 @@ spec:
       protocol: HTTP
       port: 80
     - hostname: wac-hospital.loc
-      name: httpsdns
+      name: fqdn
       protocol: HTTPS
       port: 443
       tls:
@@ -28,7 +28,7 @@ spec:
         - kind: Secret
           name: wac-hospital-tls
     - hostname: localhost
-      name: httpslocalhost
+      name: localhost
       protocol: HTTPS
       port: 443
       tls:
