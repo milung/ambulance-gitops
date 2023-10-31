@@ -16,10 +16,10 @@ spec:
       - name: oauth2-proxy  
         image: bitnami/oauth2-proxy
         env:
-           - name: OAUTH2_PROXY_UPSTREAM
+           - name: OAUTH2_PROXY_UPSTREAMS
              # respnd with OK on successfull authentication
              value: static://200
-             
+
            - name: OAUTH2_PROXY_PROVIDER
              value: github
 
