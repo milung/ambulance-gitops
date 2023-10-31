@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: oauth2-proxy  
-        image: milung/o2px
+        image: bitnami/oauth2-proxy
         env:
            - name: OAUTH2_PROXY_PROVIDER
              value: github
