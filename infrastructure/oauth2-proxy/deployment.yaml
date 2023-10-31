@@ -16,6 +16,10 @@ spec:
       - name: oauth2-proxy  
         image: bitnami/oauth2-proxy
         env:
+           - name: OAUTH2_PROXY_UPSTREAM
+             # respnd with OK on successfull authentication
+             value: static://200
+             
            - name: OAUTH2_PROXY_PROVIDER
              value: github
 
@@ -67,6 +71,8 @@ spec:
            - name: OAUTH2_PROXY_PASS_SESSION_STORE
              # alternatively use redis
              value: cookie
+           - name: OAUTH2_PROXY_SILENCE_PING_LOGGING
+             value: "true"
         resources:
           limits:
             cpu: '0.2'
