@@ -18,7 +18,7 @@ spec:
         env:
            - name: OAUTH2_PROXY_UPSTREAMS
              # respnd with OK on successfull authentication
-             value: static://200
+             value: "static://200"
 
            - name: OAUTH2_PROXY_PROVIDER
              value: github
@@ -65,10 +65,10 @@ spec:
              # either here or create separate gateway/listener for anonymous users
              value: (\/.well-known\/|\/favicon.ico)
 
-           - name: OAUTH2_PROXY_PASS_ACCESS_TOKEN
-             value: "true"
+          #  - name: OAUTH2_PROXY_PASS_ACCESS_TOKEN
+          #    value: "true"
 
-           - name: OAUTH2_PROXY_PASS_SESSION_STORE
+           - name: OAUTH2_PROXY_SESSION_STORE_TYPE
              # alternatively use redis
              value: cookie
            - name: OAUTH2_PROXY_SILENCE_PING_LOGGING
