@@ -22,13 +22,13 @@ spec:
            - name: OAUTH2_PROXY_CLIENT_ID
              valueFrom:
                secretKeyRef:
-                   name: github-client
+                   name: oidc-client
                    key: client-id
 
            - name: OAUTH2_PROXY_CLIENT_SECRET
              valueFrom:
                secretKeyRef:
-                   name: github-client
+                   name: oidc-client
                    key: client-secret
            - name: OAUTH2_PROXY_REDIRECT_URL
              # must match redirection registered at GitHub Oauth2 Application form
@@ -37,7 +37,7 @@ spec:
            - name: OAUTH2_PROXY_COOKIE_SECRET
              valueFrom:
                secretKeyRef:
-                   name: github-client
+                   name: oidc-client
                    key: cookie-secret
 
            - name: OAUTH2_PROXY_COOKIE_PREFIX
