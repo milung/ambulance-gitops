@@ -31,7 +31,6 @@ spec:
         - --set-xauthrequest
         - --set-authorization-header
         - --pass-authorization-header
-        - --pass-access-token
         - --skip-auth-strip-headers
         env:
            - name: OAUTH2_PROXY_HTTP_ADDRESS
@@ -44,6 +43,11 @@ spec:
                secretKeyRef:
                    name: oidc-client
                    key: client-id
+           - name: OAUTH2_PROXY_JWT_KEY
+             valueFrom:
+              configMapKeyRef:
+                  name: jwt-pem
+                  key: jwt.pem
 
            - name: OAUTH2_PROXY_CLIENT_SECRET
              valueFrom:
