@@ -30,7 +30,7 @@ spec:
         - --upstream="static://200"
         - --set-xauthrequest
         - --set-authorization-header
-        - --http-address=":4180"
+        - --http-address="0.0.0.0:4180"
         env:
            - name: OAUTH2_PROXY_PROVIDER
              value: github
@@ -82,25 +82,25 @@ spec:
              value: cookie
            - name: OAUTH2_PROXY_SILENCE_PING_LOGGING
              value: "true"
-        resources:
-          limits:
-            cpu: '0.2'
-            memory: '320M'
-          requests:
-            cpu: '0.01'
-            memory: '128M'
-        livenessProbe:
-          httpGet:
-            path: /ready
-            scheme: HTTP
-            port: 4180
-          initialDelaySeconds: 5
-          periodSeconds: 15
-        readinessProbe:
-          httpGet:
-            path: /ready
-            scheme: HTTP
-            port: 4180
-          initialDelaySeconds: 5
-          periodSeconds: 5
+        # resources:
+        #   limits:
+        #     cpu: '0.2'
+        #     memory: '320M'
+        #   requests:
+        #     cpu: '0.01'
+        #     memory: '128M'
+        # livenessProbe:
+        #   httpGet:
+        #     path: /ready
+        #     scheme: HTTP
+        #     port: 4180
+        #   initialDelaySeconds: 5
+        #   periodSeconds: 15
+        # readinessProbe:
+        #   httpGet:
+        #     path: /ready
+        #     scheme: HTTP
+        #     port: 4180
+        #   initialDelaySeconds: 5
+        #   periodSeconds: 5
       
