@@ -13,12 +13,24 @@ spec:
         pod: *PODNAME
     spec:
       containers:
+      - name: http-sniff
+        image: milung/http-sniff
+        env: 
+        - name: HTTP_SNIFF_UPSTREAM 
+          value: http://localhost:4180
+        - name: HTTP_SNIFF_PORT
+          value: "8080"
+        ports:
+        - name: http
+          containerPort: 8080
+
       - name: oauth2-proxy  
         image: bitnami/oauth2-proxy
+        args: 
+        - --upstream="static://200"
         env:
-           - name: OAUTH2_PROXY_UPSTREAMS
-             # respnd with OK on successfull authentication
-             value: "static://200"
+           - name: OAUTH2_PROXY_REVERSE_PROXY
+             value: "true"
 
            - name: OAUTH2_PROXY_PROVIDER
              value: github

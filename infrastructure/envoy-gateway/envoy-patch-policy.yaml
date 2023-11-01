@@ -18,7 +18,7 @@ spec:
           op: add
           # if there is only single listener per tls endpoint then replace "/filter_chains/0" 
           # with "/default_filter_chain" 
-          # use config `envoy-proxy listener -A` to find out actual configuration
+          # use config `egctl config envoy-proxy listener -A` to find out actual xDS configuration
           path: "/filter_chains/0/filters/0/typed_config/http_filters/0"
           value:
             name: envoy.filters.http.ext_authz
@@ -29,7 +29,7 @@ spec:
                   uri: http://oauth2-proxy
                   timeout: 30s
                   # The cluster name is of the form <RouteType>/<RouteNamespace>/<RouteName>/rule/<RuleIndex>
-                  # use config `envoy-proxy cluster -A` to find out actual configuration
+                  # use  `egctl config envoy-proxy cluster -A` to find out actual xDS configuration
                   cluster: httproute/wac-hospital/oauth2-proxy/rule/0
                 authorizationRequest:
                   allowedHeaders:
