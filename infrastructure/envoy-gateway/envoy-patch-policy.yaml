@@ -40,4 +40,4 @@ spec:
                   allowedUpstreamHeaders:
                     patterns:
                     - exact: authorization
-                    - prefix: x-auth-request
+                    - prefix: x-auth

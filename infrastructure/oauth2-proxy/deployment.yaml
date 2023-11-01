@@ -30,9 +30,8 @@ spec:
         - --upstream="static://200"
         - --set-xauthrequest
         - --set-authorization-header
+        - --http-address=":4180"
         env:
-
-
            - name: OAUTH2_PROXY_PROVIDER
              value: github
 
@@ -57,8 +56,8 @@ spec:
                    name: oidc-client
                    key: cookie-secret
 
-           - name: OAUTH2_PROXY_COOKIE_PREFIX
-             value: __Secure-
+          #  - name: OAUTH2_PROXY_COOKIE_PREFIX
+          #    value: __Secure-
            - name: OAUTH2_PROXY_COOKIE_SAMESITE
              value: lax
              
@@ -78,9 +77,6 @@ spec:
              # either here or create separate gateway/listener for anonymous users
              value: (\/.well-known\/|\/favicon.ico)
 
-          #  - name: OAUTH2_PROXY_PASS_ACCESS_TOKEN
-          #    value: "true"
-
            - name: OAUTH2_PROXY_SESSION_STORE_TYPE
              # alternatively use redis
              value: cookie
@@ -93,18 +89,18 @@ spec:
           requests:
             cpu: '0.01'
             memory: '128M'
-        # livenessProbe:
-        #   httpGet:
-        #     path: /ping
-        #     scheme: HTTP
-        #     port: 4180
-        #   initialDelaySeconds: 5
-        #   periodSeconds: 15
-        # readinessProbe:
-        #   httpGet:
-        #     path: /ready
-        #     scheme: HTTP
-        #     port: 4180
-        #   initialDelaySeconds: 5
-        #   periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /ready
+            scheme: HTTP
+            port: 4180
+          initialDelaySeconds: 5
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /ready
+            scheme: HTTP
+            port: 4180
+          initialDelaySeconds: 5
+          periodSeconds: 5
       
