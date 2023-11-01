@@ -28,11 +28,10 @@ spec:
         image: bitnami/oauth2-proxy
         args: 
         - --upstream="static://200"
-        - --pass-authorization-header=true
-        - --pass-user-headers=true
+        - --set-xauthrequest
+        - --set-authorization-header
         env:
-           - name: OAUTH2_PROXY_REVERSE_PROXY
-             value: "true"
+
 
            - name: OAUTH2_PROXY_PROVIDER
              value: github
