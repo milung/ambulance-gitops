@@ -30,6 +30,8 @@ spec:
         - --upstream="static://200"
         - --set-xauthrequest
         - --set-authorization-header
+        - --pass-authorization-header
+        - --skip-auth-strip-headers
         env:
            - name: OAUTH2_PROXY_HTTP_ADDRESS
              value: ":4180"
@@ -83,25 +85,25 @@ spec:
              value: cookie
            - name: OAUTH2_PROXY_SILENCE_PING_LOGGING
              value: "true"
-        # resources:
-        #   limits:
-        #     cpu: '0.2'
-        #     memory: '320M'
-        #   requests:
-        #     cpu: '0.01'
-        #     memory: '128M'
-        # livenessProbe:
-        #   httpGet:
-        #     path: /ready
-        #     scheme: HTTP
-        #     port: 4180
-        #   initialDelaySeconds: 5
-        #   periodSeconds: 15
-        # readinessProbe:
-        #   httpGet:
-        #     path: /ready
-        #     scheme: HTTP
-        #     port: 4180
-        #   initialDelaySeconds: 5
-        #   periodSeconds: 5
+        resources:
+          limits:
+            cpu: '0.2'
+            memory: '320M'
+          requests:
+            cpu: '0.01'
+            memory: '128M'
+        livenessProbe:
+          httpGet:
+            path: /ready
+            scheme: HTTP
+            port: 4180
+          initialDelaySeconds: 5
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /ready
+            scheme: HTTP
+            port: 4180
+          initialDelaySeconds: 5
+          periodSeconds: 5
       
