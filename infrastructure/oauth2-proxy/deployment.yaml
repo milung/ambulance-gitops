@@ -31,6 +31,7 @@ spec:
         - --set-xauthrequest
         - --set-authorization-header
         - --pass-authorization-header
+        - --pass-access-token
         - --skip-auth-strip-headers
         env:
            - name: OAUTH2_PROXY_HTTP_ADDRESS
@@ -59,8 +60,8 @@ spec:
                    name: oidc-client
                    key: cookie-secret
 
-          #  - name: OAUTH2_PROXY_COOKIE_PREFIX
-          #    value: __Secure-
+           - name: OAUTH2_PROXY_COOKIE_PREFIX
+             value: __Secure-
            - name: OAUTH2_PROXY_COOKIE_SAMESITE
              value: lax
              
