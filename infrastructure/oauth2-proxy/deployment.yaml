@@ -36,6 +36,8 @@ spec:
              value: ":4180"
            - name: OAUTH2_PROXY_PROVIDER
              value: github
+           - name: OAUTH2_PROXY_SCOPES
+             value: "user:email openid"
 
            - name: OAUTH2_PROXY_CLIENT_ID
              valueFrom:
