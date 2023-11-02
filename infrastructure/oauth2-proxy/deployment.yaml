@@ -13,48 +13,37 @@ spec:
         pod: *PODNAME
     spec:
       containers:
-      - name: http-sniff
-        image: milung/http-sniff
-        env: 
-        - name: HTTP_SNIFF_UPSTREAM 
-          value: http://localhost:4180
-        - name: HTTP_SNIFF_PORT
-          value: "8080"
-        ports:
-        - name: http
-          containerPort: 8080
-
-      - name: oauth2-proxy  
+      - name: oauth2-proxy
         image: bitnami/oauth2-proxy
         args: 
         - --upstream="static://200"
         - --set-xauthrequest
-        - --set-authorization-header=true
-        - --skip-auth-strip-headers
+        - --set-authorization-header
+        - --silence-ping-logging
         env:
            - name: OAUTH2_PROXY_HTTP_ADDRESS
+             # listen on standard interface - localhost will not work
              value: ":4180"
+
+           - name: OAUTH2_PROXY_PROXY_PREFIX
+             # oauth2-proxy route listens on path /authn
+             value: /authn
+
            - name: OAUTH2_PROXY_PROVIDER
              value: github
-           - name: OAUTH2_PROXY_SCOPES
-             value: "user:email openid"
 
            - name: OAUTH2_PROXY_CLIENT_ID
              valueFrom:
                secretKeyRef:
                    name: oidc-client
                    key: client-id
-           - name: OAUTH2_PROXY_JWT_KEY
-             valueFrom:
-              configMapKeyRef:
-                  name: jwt-pem
-                  key: jwt.pem
 
            - name: OAUTH2_PROXY_CLIENT_SECRET
              valueFrom:
                secretKeyRef:
                    name: oidc-client
                    key: client-secret
+
            - name: OAUTH2_PROXY_REDIRECT_URL
              # must match redirection registered at GitHub Oauth2 Application form
              value: https://wac-hospital.loc/authn/callback
@@ -65,17 +54,18 @@ spec:
                    name: oidc-client
                    key: cookie-secret
 
+           - name: OAUTH2_PROXY_SESSION_STORE_TYPE
+             # alternatively use redis and configure it
+             value: cookie
+
            - name: OAUTH2_PROXY_COOKIE_PREFIX
              value: __Secure-
            - name: OAUTH2_PROXY_COOKIE_SAMESITE
              value: lax
              
            - name: OAUTH2_PROXY_EMAIL_DOMAINS
-             # we will authorize users later
+             # only authenticate - we will authorize users later
              value: "*"
-           - name: OAUTH2_PROXY_PROXY_PREFIX
-             # oauth2-proxy listens on path /authn
-             value: /authn
 
            - name: OAUTH2_PROXY_SKIP_PROVIDER_BUTTON
              # change to true to skip provider selection page. Here false for demonstration only
@@ -84,13 +74,7 @@ spec:
            - name: OAUTH2_PROXY_SKIP_AUTH_ROUTES
              # regex of routes where anonymous users are allowed
              # either here or create separate gateway/listener for anonymous users
-             value: (\/.well-known\/|\/favicon.ico)
-
-           - name: OAUTH2_PROXY_SESSION_STORE_TYPE
-             # alternatively use redis
-             value: cookie
-           - name: OAUTH2_PROXY_SILENCE_PING_LOGGING
-             value: "true"
+             value: (\/.well-known\/|\/favicon.ico)   
         resources:
           limits:
             cpu: '0.2'
@@ -112,4 +96,4 @@ spec:
             port: 4180
           initialDelaySeconds: 5
           periodSeconds: 5
-      
+        

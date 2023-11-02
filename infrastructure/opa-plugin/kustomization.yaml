@@ -11,3 +11,11 @@ resources:
 - deployment.yaml
 - service.yaml
 - http-route.yaml
+
+configMapGenerator:
+- name: opa-config
+  files:
+    - config.yaml=params/opa-config.yaml
+- name: opa-policy
+  files: 
+  - params/policy.rego
