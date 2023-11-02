@@ -41,9 +41,9 @@ spec:
           - "/policy/policy.rego"
         ports: 
           - containerPort: 8181
-            name: opa-plugin
+            name: opa-rest
           - containerPort: 8282
-            name: opa-plugin-diagnostics
+            name: opa-diag
           - containerPort: 9191
             name: envoy-plugin
 
