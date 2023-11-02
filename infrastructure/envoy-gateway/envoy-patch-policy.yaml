@@ -11,7 +11,7 @@ spec:
       namespace: wac-hospital
     type: JSONPatch
     jsonPatches:
-      - "type": "type.googleapis.com/envoy.config.listener.v3.Listener"
+      - type: "type.googleapis.com/envoy.config.listener.v3.Listener"
         # The listener name is of the form <GatewayNamespace>/<GatewayName>/<GatewayListenerName>
         name:  wac-hospital/wac-hospital-gateway/fqdn
         operation:
@@ -41,7 +41,7 @@ spec:
                     patterns:
                     - exact: authorization
                     - prefix: x-auth
-      - "type": "type.googleapis.com/envoy.config.listener.v3.Listener"
+      - type: "type.googleapis.com/envoy.config.listener.v3.Listener"
         name:  wac-hospital/wac-hospital-gateway/fqdn
         operation:
           op: add
@@ -53,6 +53,7 @@ spec:
               transport_api_version: V3
               grpc_service:
                   google_grpc:
-                    target_uri: http://opa-plugin:9191
+                    target_uri: opa-plugin:9191
+                    stat_prefix: ext_authz
                   timeout: 3s
                 

@@ -23,7 +23,7 @@ spec:
         env:
            - name: OAUTH2_PROXY_HTTP_ADDRESS
              # listen on standard interface - localhost will not work
-             value: ":4180"
+             value: "0.0.0.0:4180"
 
            - name: OAUTH2_PROXY_PROXY_PREFIX
              # oauth2-proxy route listens on path /authn

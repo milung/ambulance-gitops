@@ -5,12 +5,11 @@ namespace: wac-hospital
 
 commonLabels:
   app.kubernetes.io/part-of: wac-hospital
-  app.kubernetes.io/component: oauth2-proxy
+  app.kubernetes.io/component: opa-plugin
 
 resources:
 - deployment.yaml
 - service.yaml
-- http-route.yaml
 
 configMapGenerator:
 - name: opa-config
