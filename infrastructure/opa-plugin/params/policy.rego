@@ -16,6 +16,19 @@ allow {
     action_allowed
 }
 
+response_headers_to_add["x-auth-request-roles"] := roles if {
+    user.valid
+    roles := join(" ", [role | role := user_roles[_]])
+}
+
+user_roles = ["user"] { 
+    user.valid
+}
+
+user_roles = ["admin"] { 
+    user_is_admin
+}
+
 headers["x-validated-by"] := "opa-checkpoint"
 
 action_allowed {
@@ -24,16 +37,15 @@ action_allowed {
 }
 
 action_allowed {
-    # or if path is /http-echo then check query string if user is admin - yes, not safe
-    glob.match("/http-echo*", [], http_request.path)
-    [_, query] := split(http_request.path, "?")
-    glob.match("am-i-admin=yes", [], query)
-    response_headers_to_add["x-auth-request-roles"] := "admin"
+    user_is_admin
 }
 
-action_allowed {
-    # or my colleague can visit my /http-echo
-    glob.match("/http-echo*", [], http_request.path)
+user_is_admin {
+    [_, query] := split(http_request.path, "?")
+    glob.match("am-i-admin=yes", [], query)
+}
+
+user_is_admin {
     user.email == "<kolegov@email>"
     response_headers_to_add["x-auth-request-roles"] := "admin collegue"
 }
