@@ -27,13 +27,14 @@ spec:
               http_service:
                 server_uri:
                   uri: http://oauth2-proxy.wac-hospital
-                  timeout: 30s                  
+                  timeout: 30s
                 authorizationRequest:
                   allowedHeaders:
                     patterns:
                     - exact: authorization
                     - exact: cookie
                 authorizationResponse:
+                  allowedUpstreamHeaders:
                     patterns:
                     - exact: authorization
                     - prefix: x-auth
