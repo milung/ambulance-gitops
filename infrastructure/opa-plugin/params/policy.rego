@@ -16,6 +16,8 @@ allow {
     action_allowed
 }
 
+headers["x-validated-by"] := "opa-checkpoint"
+
 action_allowed {
     # authenticated user can visit any page, but not /http-echo
     not glob.match("/http-echo*", [], http_request.path)
@@ -26,10 +28,12 @@ action_allowed {
     glob.match("/http-echo*", [], http_request.path)
     [_, query] := split(http_request.path, "?")
     glob.match("am-i-admin=yes", [], query)
+    response_headers_to_add["x-auth-request-roles"] := "admin"
 }
 
 action_allowed {
     # or my colleague can visit my /http-echo
     glob.match("/http-echo*", [], http_request.path)
     user.email == "<kolegov@email>"
+    response_headers_to_add["x-auth-request-roles"] := "admin collegue"
 }
