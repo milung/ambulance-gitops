@@ -10,7 +10,6 @@ commonLabels:
 resources:
 - deployment.yaml
 - service.yaml
-- http-route.yaml
 
 configMapGenerator:
 - name: opa-config

@@ -47,13 +47,13 @@ spec:
           - containerPort: 9191
             name: envoy-plugin
 
-        # resources:
-        #   limits:
-        #     cpu: '0.5'
-        #     memory: '320M'
-        #   requests:
-        #     cpu: '0.01'
-        #     memory: '128M'
+        resources:
+          limits:
+            cpu: '0.5'
+            memory: '320M'
+          requests:
+            cpu: '0.01'
+            memory: '128M'
         # livenessProbe:
         #   httpGet:
         #     path: /health?plugins

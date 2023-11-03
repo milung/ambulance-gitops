@@ -26,11 +26,8 @@ spec:
               "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
               http_service:
                 server_uri:
-                  uri: http://oauth2-proxy
-                  timeout: 30s
-                  # The cluster name is of the form <RouteType>/<RouteNamespace>/<RouteName>/rule/<RuleIndex>
-                  # use  `egctl config envoy-proxy cluster -A` to find out actual xDS configuration
-                  cluster: httproute/wac-hospital/oauth2-proxy/rule/0
+                  uri: http://oauth2-proxy.wac-hospital
+                  timeout: 30s                  
                 authorizationRequest:
                   allowedHeaders:
                     patterns:
@@ -40,7 +37,6 @@ spec:
                     patterns:
                     - exact: authorization
                     - prefix: x-auth
-                    - regex: .*
       - type: "type.googleapis.com/envoy.config.listener.v3.Listener"
         name:  wac-hospital/wac-hospital-gateway/fqdn
         operation:
@@ -51,12 +47,8 @@ spec:
             typed_config:
               "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
               transport_api_version: V3
-              with_request_body:
-                max_request_bytes: 8192
-                allow_partial_message: true
-              failure_mode_allow: false
               grpc_service:
-                  envoy_grpc:
-                    cluster_name: httproute/wac-hospital/opa-plugin/rule/0
-                  timeout: 3s
-                
+                google_grpc:
+                  stat_prefix: opa
+                  target_uri: opa-plugin.wac-hospital:9191
+                timeout: 3s
