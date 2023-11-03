@@ -21,7 +21,7 @@ spec:
           # use config `egctl config envoy-proxy listener -A` to find out actual xDS configuration
           path: "/filter_chains/0/filters/0/typed_config/http_filters/0"
           value:
-            name: envoy.filters.http.ext_authz
+            name: authentication.ext_authz
             typed_config:
               "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
               http_service:
@@ -47,7 +47,7 @@ spec:
           op: add
           path: "/filter_chains/0/filters/0/typed_config/http_filters/1"
           value:
-            name: envoy.filters.http.ext_authz
+            name: authorization.ext_authz
             typed_config:
               "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
               transport_api_version: V3
