@@ -47,5 +47,4 @@ user_is_admin {
 
 user_is_admin {
     user.email == "<kolegov@email>"
-    response_headers_to_add["x-auth-request-roles"] := "admin collegue"
 }
