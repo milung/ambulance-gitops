@@ -6,5 +6,4 @@ spec:
   ports:
   - name: http
     port: 9191
-    protocol: TCP
     targetPort: 9191
