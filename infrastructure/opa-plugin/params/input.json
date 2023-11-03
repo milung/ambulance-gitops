@@ -15,50 +15,52 @@
                 "headers": {
                     ":authority": "wac-hospital.loc",
                     ":method": "GET",
-                    ":path": "/http-echo?am-i-admin=yes",
+                    ":path": "/http-echo/?am-i-admin=yes",
                     ":scheme": "https",
-                    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
                     "accept-encoding": "gzip, deflate, br",
-                    "accept-language": "sk,en-US;q=0.8,en;q=0.5,cs;q=0.3",
+                    "accept-language": "sk-SK,sk;q=0.9,en-US;q=0.8,en;q=0.7,cs;q=0.6",
                     "cache-control": "no-cache",
-                    "cookie": "_oauth2_proxy=Mqi6PoN8VNZt5h5RmdGZQanV13b0nhhdpCBujHjwklnKLENpzmcLr_rckrb_Xwp_a2maDkbU3dqET94eFMfzRZTFP0ikT1lre24NsD5PSfgXv8FqahPY4RfIW1uHWbCWi446B6hf_zW4NyEC3vhFXOlci_z2aF1qPiwo5GP5GsFoRLuv30AWWrnxgUDfdDtoVB8r6AN1Lg5t9cODu6vp5oGgsOpBEggrIzxuTKm8l2Xh43YTXllmKCTR__teEFE=|1698856602|7NPZO4Yp9fYKDXRRdl_rPnhDBaeAhnnsnwhV413jer4=",
+                    "cookie": "_oauth2_proxy=8Ntp-tOBqV1GSJo3atNJjs5Fk9WLAh9fd8B_PAYdXyFKvz5SIxrePpS0v4jx4Wk-qF1Wpmmy4KWJKxaV4LH7M9qQokB4MyqJ6kZRwZMDk3gBZlY-OPSNdMB7L4XVphjyONi43ZhnR2A0gbDMUESS6Z8u6LZ_oluxhBuuzG_PuNHchXQsIICgS0hdRc_zKlyodu9H1NsDpNf9PZl3gO4EsX1jLcg1jCv4CgFAs_zaV4R5T8JORcBkb_8eKaiCd8k=|1699005699|vQIdtZ42oslEaO8kR6-YMhq3B8BZkZbYciIehJr9l5s=",
                     "pragma": "no-cache",
+                    "sec-ch-ua": "\"Chromium\";v=\"118\", \"Google Chrome\";v=\"118\", \"Not=A?Brand\";v=\"99\"",
+                    "sec-ch-ua-mobile": "?0",
+                    "sec-ch-ua-platform": "\"Windows\"",
                     "sec-fetch-dest": "document",
                     "sec-fetch-mode": "navigate",
                     "sec-fetch-site": "none",
                     "sec-fetch-user": "?1",
-                    "te": "trailers",
                     "upgrade-insecure-requests": "1",
-                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0",
+                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
                     "x-auth-request-email": "milan.unger@siemens-healthineers.com",
                     "x-auth-request-user": "milung",
                     "x-envoy-internal": "true",
-                    "x-forwarded-email": "milan.unger@siemens-healthineers.com",
-                    "x-forwarded-for": "10.244.16.62",
+                    "x-forwarded-for": "10.244.17.163",
                     "x-forwarded-proto": "https",
-                    "x-request-id": "8ffffe59-9130-4a08-a677-a17cdf6c7331"
+                    "x-request-id": "6c393fda-d05c-4cc5-b455-3af245547e40"
                 },
                 "host": "wac-hospital.loc",
-                "id": "517734088261344026",
+                "id": "2561335360831005364",
                 "method": "GET",
-                "path": "/http-echo?am-i-admin=yes",
+                "path": "/http-echo/?am-i-admin=yes",
                 "protocol": "HTTP/2",
                 "scheme": "https"
             },
-            "time": "2023-11-03T08:10:12.564376Z"
+            "time": "2023-11-03T10:10:10.023563Z"
         },
         "source": {
             "address": {
                 "socketAddress": {
                     "address": "127.0.0.1",
-                    "portValue": 51946
+                    "portValue": 50376
                 }
             }
         }
     },
     "parsed_body": null,
     "parsed_path": [
-        "http-echo"
+        "http-echo",
+        ""
     ],
     "parsed_query": {
         "am-i-admin": [

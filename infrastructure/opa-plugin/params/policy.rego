@@ -3,7 +3,7 @@ import input.attributes.request.http as http_request
 
 default allow = false
 
-is_valid_user = true { http_request.headers["x-forwarded-email"] }
+is_valid_user = true { http_request.headers["x-auth-request-email"] }
 
 user = { "valid": valid, "email": email, "name": name} {
     valid := is_valid_user
