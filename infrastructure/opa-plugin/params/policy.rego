@@ -8,28 +8,23 @@ is_valid_user = true { http_request.headers["x-forwarded-email"] }
 user = { "valid": valid, "email": email, "name": name} {
     valid := is_valid_user
     email := http_request.headers["x-auth-request-email"]
-    name := http_request.headers["x-auth-request-user"]
-}
-
-allow {
-    user.valid
-    action_allowed
-}
-
-response_headers_to_add["x-auth-request-roles"] := roles if {
-    user.valid
-    roles := join(" ", [role | role := user_roles[_]])
-}
-
-user_roles = ["user"] { 
-    user.valid
-}
-
-user_roles = ["admin"] { 
-    user_is_admin
+    name := http_request.headers["x-auth-request-user"] 
 }
 
 headers["x-validated-by"] := "opa-checkpoint"
+
+user_role["user"] { 
+    user.valid
+}
+
+user_role[ "admin" ] { 
+    [_, query] := split(http_request.path, "?")
+    glob.match("am-i-admin=yes", [], query)
+}
+
+user_role[ "admin" ] { 
+    user.email == "<kolegov@email>"
+}
 
 action_allowed {
     # authenticated user can visit any page, but not /http-echo
@@ -37,14 +32,17 @@ action_allowed {
 }
 
 action_allowed {
-    user_is_admin
+    user_role["admin"]
 }
 
-user_is_admin {
-    [_, query] := split(http_request.path, "?")
-    glob.match("am-i-admin=yes", [], query)
+allow {
+    user.valid
+    action_allowed
 }
 
-user_is_admin {
-    user.email == "<kolegov@email>"
-}
+response_headers_to_add["x-auth-request-roles"] := 
+[ role | 
+        some r
+        user_role[r] 
+        role := r
+] 

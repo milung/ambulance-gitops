@@ -1,0 +1,73 @@
+{
+    "attributes": {
+        "destination": {
+            "address": {
+                "socketAddress": {
+                    "address": "127.0.0.1",
+                    "portValue": 10443
+                }
+            },
+            "principal": "wac-hospital.loc"
+        },
+        "metadataContext": {},
+        "request": {
+            "http": {
+                "headers": {
+                    ":authority": "wac-hospital.loc",
+                    ":method": "GET",
+                    ":path": "/http-echo?am-i-admin=yes",
+                    ":scheme": "https",
+                    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "sk,en-US;q=0.8,en;q=0.5,cs;q=0.3",
+                    "cache-control": "no-cache",
+                    "cookie": "_oauth2_proxy=Mqi6PoN8VNZt5h5RmdGZQanV13b0nhhdpCBujHjwklnKLENpzmcLr_rckrb_Xwp_a2maDkbU3dqET94eFMfzRZTFP0ikT1lre24NsD5PSfgXv8FqahPY4RfIW1uHWbCWi446B6hf_zW4NyEC3vhFXOlci_z2aF1qPiwo5GP5GsFoRLuv30AWWrnxgUDfdDtoVB8r6AN1Lg5t9cODu6vp5oGgsOpBEggrIzxuTKm8l2Xh43YTXllmKCTR__teEFE=|1698856602|7NPZO4Yp9fYKDXRRdl_rPnhDBaeAhnnsnwhV413jer4=",
+                    "pragma": "no-cache",
+                    "sec-fetch-dest": "document",
+                    "sec-fetch-mode": "navigate",
+                    "sec-fetch-site": "none",
+                    "sec-fetch-user": "?1",
+                    "te": "trailers",
+                    "upgrade-insecure-requests": "1",
+                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0",
+                    "x-auth-request-email": "milan.unger@siemens-healthineers.com",
+                    "x-auth-request-user": "milung",
+                    "x-envoy-internal": "true",
+                    "x-forwarded-email": "milan.unger@siemens-healthineers.com",
+                    "x-forwarded-for": "10.244.16.62",
+                    "x-forwarded-proto": "https",
+                    "x-request-id": "8ffffe59-9130-4a08-a677-a17cdf6c7331"
+                },
+                "host": "wac-hospital.loc",
+                "id": "517734088261344026",
+                "method": "GET",
+                "path": "/http-echo?am-i-admin=yes",
+                "protocol": "HTTP/2",
+                "scheme": "https"
+            },
+            "time": "2023-11-03T08:10:12.564376Z"
+        },
+        "source": {
+            "address": {
+                "socketAddress": {
+                    "address": "127.0.0.1",
+                    "portValue": 51946
+                }
+            }
+        }
+    },
+    "parsed_body": null,
+    "parsed_path": [
+        "http-echo"
+    ],
+    "parsed_query": {
+        "am-i-admin": [
+            "yes"
+        ]
+    },
+    "truncated_body": false,
+    "version": {
+        "encoding": "protojson",
+        "ext_authz": "v3"
+    }
+}
