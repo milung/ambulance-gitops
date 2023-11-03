@@ -37,10 +37,10 @@ spec:
                     - exact: authorization
                     - exact: cookie
                 authorizationResponse:
-                  allowedUpstreamHeaders:
                     patterns:
                     - exact: authorization
                     - prefix: x-auth
+                    - regex: .*
       - type: "type.googleapis.com/envoy.config.listener.v3.Listener"
         name:  wac-hospital/wac-hospital-gateway/fqdn
         operation:
