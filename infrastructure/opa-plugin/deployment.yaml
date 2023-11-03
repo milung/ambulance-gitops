@@ -47,25 +47,25 @@ spec:
           - containerPort: 9191
             name: envoy-plugin
 
-        resources:
-          limits:
-            cpu: '0.5'
-            memory: '320M'
-          requests:
-            cpu: '0.01'
-            memory: '128M'
-        livenessProbe:
-          httpGet:
-            path: /health?plugins
-            scheme: HTTP
-            port: 8282
-          initialDelaySeconds: 5
-          periodSeconds: 5
-        readinessProbe:
-          httpGet:
-            path: /health?plugins
-            scheme: HTTP
-            port: 8282
-          initialDelaySeconds: 5
-          periodSeconds: 5
+        # resources:
+        #   limits:
+        #     cpu: '0.5'
+        #     memory: '320M'
+        #   requests:
+        #     cpu: '0.01'
+        #     memory: '128M'
+        # livenessProbe:
+        #   httpGet:
+        #     path: /health?plugins
+        #     scheme: HTTP
+        #     port: 8282
+        #   initialDelaySeconds: 5
+        #   periodSeconds: 5
+        # readinessProbe:
+        #   httpGet:
+        #     path: /health?plugins
+        #     scheme: HTTP
+        #     port: 8282
+        #   initialDelaySeconds: 5
+        #   periodSeconds: 5
         
