@@ -27,6 +27,9 @@ spec:
               http_service:
                 server_uri:
                   uri: http://oauth2-proxy.wac-hospital
+                  # The cluster name is of the form <RouteType>/<RouteNamespace>/<RouteName>/rule/<RuleIndex>
+                  # use  `egctl config envoy-proxy cluster -A` to find out actual xDS configuration
+                  cluster: httproute/wac-hospital/oauth2-proxy/rule/0
                   timeout: 30s
                 authorizationRequest:
                   allowedHeaders:
