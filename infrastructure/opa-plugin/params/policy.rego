@@ -46,3 +46,8 @@ response_headers_to_add["x-auth-request-roles"] :=
         user_role[r] 
         role := r
 ] 
+
+result["allowed"] := allow
+result["headers"] := headers
+result["response_headers_to_add"] := response_headers_to_add
+
