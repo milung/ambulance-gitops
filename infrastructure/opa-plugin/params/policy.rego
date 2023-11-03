@@ -40,14 +40,13 @@ allow {
     action_allowed
 }
 
-response_headers_to_add["x-auth-request-roles"] := 
-[ role | 
-        some r
-        user_role[r] 
-        role := r
-] 
+headers["x-auth-request-roles"] := concat(" ", [ role | 
+    some r
+    user_role[r] 
+    role := r
+])
+
 
 result["allowed"] := allow
 result["headers"] := headers
-result["response_headers_to_add"] := response_headers_to_add
 
