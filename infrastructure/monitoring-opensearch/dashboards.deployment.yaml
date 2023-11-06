@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: &PODNAME monitoring-daschboards
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: *PODNAME
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: *PODNAME
+    spec:
+      containers:
+      - name: *PODNAME
+        image: opensearchproject/opensearch-dashboards:latest
+        env:
+          - name: OPENSEARCH_HOSTS
+            value:  '["http://monitoring-opensearch:9200"]'
+          - name: DISABLE_SECURITY_DASHBOARDS_PLUGIN
+            value: "true"
+          - name: SERVER_BASEPATH
+            value: /monitoring
+          - name: SERVER_REWRITEBASEPATH
+            value: "true"
+        ports: 
+          - name: web
+            containerPort: 5601
+        resources:
+          limits:
+            cpu: '0.1'
+            memory: '512M'
+          requests:
+            cpu: '0.01'
+            memory: '320M'
+        

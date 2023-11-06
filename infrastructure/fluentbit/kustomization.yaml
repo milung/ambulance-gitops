@@ -1,0 +1,19 @@
+resources:
+- namespace.yaml
+- https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/fluent-bit-service-account.yaml
+- https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/fluent-bit-role-1.22.yaml
+- https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/fluent-bit-role-binding-1.22.yaml
+- https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/output/elasticsearch/fluent-bit-configmap.yaml
+- https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/output/elasticsearch/fluent-bit-ds.yaml
+# for minikube use the following line  instead of the above one
+#- https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/output/elasticsearch/fluent-bit-ds-minikube.yaml
+
+
+images:
+  - name: fluent/fluent-bit
+    newName: fluent/fluent-bit
+    newTag: latest
+    
+patches: 
+- path: patches/fluent-bit-config.config-map.yaml
+- path: patches/fluent-bit.daemon-set.yaml

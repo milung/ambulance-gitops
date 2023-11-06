@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: &PODNAME monitoring-opensearch-server
+spec: 
+  selector:
+    app.kubernetes.io/component: *PODNAME
+  ports:
+  - name: api
+    port: 9200
+    targetPort: 9200
+  - name: performance
+    port: 9600
+    targetPort: 9600

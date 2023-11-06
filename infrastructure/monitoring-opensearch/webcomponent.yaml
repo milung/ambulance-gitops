@@ -1,0 +1,13 @@
+apiVersion: fe.milung.eu/v1
+kind: WebComponent
+metadata: 
+  name: monitoring-dashboards
+spec:   
+  module-uri: built-in
+  navigation:
+    - element: ufe-frame 
+      path: monitoring
+      title: Monitoring Dashboards
+      attributes:  
+        - name: src
+          value: /monitoring

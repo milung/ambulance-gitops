@@ -9,6 +9,8 @@ resources:
 - ../../../infrastructure/cert-manager
 - ../../../infrastructure/oauth2-proxy
 - ../../../infrastructure/opa-plugin
+- ../../../infrastructure/monitoring-opensearch
+- ../../../infrastructure/fluentbit
   
 patches: 
 - path: patches/ufe-controller.service.yaml    # úprava služby ufe-controller
