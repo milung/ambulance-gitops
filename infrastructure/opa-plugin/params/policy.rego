@@ -50,7 +50,7 @@ user_role[ "admin" ] {
 
 # this are users with access to monitoring actions
 user_role[ "monitoring" ] { 
-    user.email == "<your github account>"
+    user.email == "milan.unger@siemens-healthineers.com"
 }
 
 
