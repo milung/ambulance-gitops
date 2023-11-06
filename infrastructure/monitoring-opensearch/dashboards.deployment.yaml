@@ -24,6 +24,11 @@ spec:
             value: /monitoring
           - name: SERVER_REWRITEBASEPATH
             value: "true"
+          - name: OPENSEARCHDASHBOARDS_BRANDING_USEEXPANDEDHEADER
+            value: "false"
+          - name: OPENSEARCHDASHBOARDS_BRANDING_APPLICATIONTITLE
+            value: Wac Hospital Monitoring
+
         ports: 
           - name: web
             containerPort: 5601
