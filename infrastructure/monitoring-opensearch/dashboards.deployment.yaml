@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: &PODNAME monitoring-daschboards
+  name: &PODNAME monitoring-dashboards
 spec:
   replicas: 1
   selector:
