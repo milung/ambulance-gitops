@@ -17,7 +17,7 @@ spec:
         image: opensearchproject/opensearch-dashboards:latest
         env:
           - name: OPENSEARCH_HOSTS
-            value:  '["http://monitoring-opensearch:9200"]'
+            value:  '["http://monitoring-opensearch-server:9200"]'
           - name: DISABLE_SECURITY_DASHBOARDS_PLUGIN
             value: "true"
           - name: SERVER_BASEPATH

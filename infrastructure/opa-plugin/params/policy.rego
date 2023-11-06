@@ -72,7 +72,7 @@ allow {
 # set header to indicate that this policy was used to validate the request
 headers["x-validated-by"] := "opa-checkpoint"
 
-headers["x-auth-request-roles"] := concat(" ", [ role | 
+headers["x-auth-request-roles"] := concat(", ", [ role | 
     some r
     user_role[r] 
     role := r
