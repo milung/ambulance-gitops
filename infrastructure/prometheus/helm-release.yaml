@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: prometheus
+  namespace: wac-hospital
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: prometheus
+
+      sourceRef:
+        kind: HelmRepository
+        name: prometheus-community
+        namespace: wac-hospital
+      interval: 1m
+      reconcileStrategy: Revision
+  values:
+    prometheus-node-exporter:
+      hostRootFsMount:
+        mountPropagation: false # required on docker-desktop kluster 
+      

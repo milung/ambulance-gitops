@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: *PODNAME
-        image: opensearchproject/opensearch-dashboards:latest
+        # issue with metrics in  2.11.0 - https://forum.opensearch.org/t/prometheus-metrics-visualization-display-data-source-cant-be-visualized/16599
+        image: opensearchproject/opensearch-dashboards:2.10.0
         env:
           - name: OPENSEARCH_HOSTS
             value:  '["http://monitoring-opensearch-server:9200"]'
@@ -34,9 +35,9 @@ spec:
             containerPort: 5601
         resources:
           limits:
+            cpu: '0.5'
+            memory: '1Gi'
+          requests:
             cpu: '0.1'
             memory: '512M'
-          requests:
-            cpu: '0.01'
-            memory: '320M'
         

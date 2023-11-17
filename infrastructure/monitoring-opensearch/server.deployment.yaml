@@ -4,6 +4,9 @@ metadata:
   name: &PODNAME monitoring-opensearch-server
 spec:
   replicas: 1
+  strategy:
+    # recreate to avoid simultanopus locking of the data volume during updates
+    type: Recreate
   selector:
     matchLabels:
       app.kubernetes.io/component: *PODNAME
@@ -16,6 +19,26 @@ spec:
       - name: *PODNAME
         persistentVolumeClaim:
           claimName: *PODNAME
+      initContainers:
+      - name: fsgroup-volume
+        image: busybox:latest
+        imagePullPolicy: IfNotPresent
+        command: ['sh', '-c']
+        args:
+          # change data ownership to avoid "permision denied" errors
+          - 'chown -R 1000:1000 /usr/share/opensearch/data'
+        securityContext:
+          runAsUser: 0
+        resources:
+          requests:
+            cpu: 1m
+            memory: 32Mi
+          limits:
+            cpu: 10m
+            memory: 128Mi
+        volumeMounts:
+          - mountPath: /usr/share/opensearch/data
+            name: *PODNAME
       containers:
       - name: *PODNAME
         image: opensearchproject/opensearch:latest

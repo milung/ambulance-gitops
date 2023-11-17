@@ -1,0 +1,13 @@
+apiVersion: fe.milung.eu/v1
+kind: WebComponent
+metadata: 
+  name: grafana
+spec:   
+  module-uri: built-in
+  navigation:
+    - element: ufe-frame 
+      path: grafana
+      title: System Dashboards
+      attributes:  
+        - name: src
+          value: /grafana
