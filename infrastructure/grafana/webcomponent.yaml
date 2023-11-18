@@ -8,6 +8,7 @@ spec:
     - element: ufe-frame 
       path: grafana
       title: System Dashboards
+      details: Aktuálny operačný stav systému
       attributes:  
         - name: src
           value: /grafana
