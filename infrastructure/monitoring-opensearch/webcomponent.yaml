@@ -7,7 +7,7 @@ spec:
   navigation:
     - element: ufe-frame 
       path: monitoring
-      title: Ananlýza logov
+      title: Analýza logov
       details: Analytické nástroje pre prácu so záznamami systému
       attributes:  
         - name: src
