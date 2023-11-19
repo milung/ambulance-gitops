@@ -1,14 +1,26 @@
 apiVersion: fe.milung.eu/v1
 kind: WebComponent
-metadata: 
+metadata:
+  creationTimestamp: "2023-11-18T16:16:01Z"
+  generation: 2
+  labels:
+    app.kubernetes.io/component: grafana
+    kustomize.toolkit.fluxcd.io/name: prepare
+    kustomize.toolkit.fluxcd.io/namespace: wac-hospital
   name: grafana
-spec:   
+  namespace: wac-hospital
+  resourceVersion: "1620678"
+  uid: 835e1845-7cde-4f25-831f-20633627a878
+spec:
   module-uri: built-in
   navigation:
-    - element: ufe-frame 
-      path: grafana
-      title: System Dashboards
-      details: Aktuálny operačný stav systému
-      attributes:  
-        - name: src
-          value: /grafana
+  - attributes:
+    - name: src
+      value: /grafana
+    details: Aktuálny operačný stav systému
+    element: ufe-frame
+    path: grafana
+    priority: 0
+    title: System Dashboards
+  preload: false
+  proxy: true
