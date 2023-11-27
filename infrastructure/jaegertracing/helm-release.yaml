@@ -30,7 +30,7 @@ spec:
         - name: ES_TAGS_AS_FIELDS_ALL
           value: "true"
         - name: ES_SERVER_URLS
-          value: http://opensearch.wac-hospital:9200
+          value: http://monitoring-opensearch.wac-hospital:9200
         - name: ES_TLS_ENABLED
           value: "false"
       service:
@@ -47,6 +47,6 @@ spec:
         - name: SPAN_STORAGE_TYPE
           value: opensearch
         - name: ES_SERVER_URLS
-          value: http://opensearch.wac-hospital:9200
+          value: http://monitoring-opensearch.wac-hospital:9200
         - name: ES_TLS_ENABLED
           value: "false"
