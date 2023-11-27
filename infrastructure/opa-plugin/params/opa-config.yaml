@@ -4,3 +4,10 @@ plugins:
     path: wac/authz/result
 decision_logs:
   console: true
+distributed_tracing:
+  type: grpc
+  address: jaeger-collector.wac-hospital:4317
+  service_name: open-policy-agent
+  # downrate in production, see https://opentelemetry.io/docs/concepts/sampling/
+  sample_percentage: 100
+  encryption: "off"
