@@ -1,0 +1,52 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jaeger
+  namespace: wac-hospital
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: jaeger
+
+      sourceRef:
+        kind: HelmRepository
+        name: jaegertracing
+        namespace: wac-hospital
+      interval: 1m
+      reconcileStrategy: Revision
+  # to configure jaeger in production see https://github.com/jaegertracing/helm-charts/blob/main/charts/jaeger/values.yaml
+  values:
+    provisionDataStore:
+      cassandra: false
+    storage:
+      type: opensearch
+    collector:
+      enabled: true
+      extraEnv:
+        # see https://opensearch.org/docs/latest/observing-your-data/trace/trace-analytics-jaeger/
+        - name: SPAN_STORAGE_TYPE
+          value: opensearch
+        - name: ES_TAGS_AS_FIELDS_ALL
+          value: "true"
+        - name: ES_SERVER_URLS
+          value: http://opensearch.wac-hospital:9200
+        - name: ES_TLS_ENABLED
+          value: "false"
+      service:
+        otlp:
+          grpc:
+            name: otlp-grpc
+            port: 4317
+          http:
+            name: otlp-http
+            port: 4318
+    query:
+      enabled: true
+      extraEnv:
+        - name: SPAN_STORAGE_TYPE
+          value: opensearch
+        - name: ES_SERVER_URLS
+          value: http://opensearch.wac-hospital:9200
+        - name: ES_TLS_ENABLED
+          value: "false"

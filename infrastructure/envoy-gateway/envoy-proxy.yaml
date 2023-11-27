@@ -1,0 +1,13 @@
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: EnvoyProxy
+metadata:
+  name: wac-hospital-proxy
+spec:
+  telemetry:
+    tracing:
+      # sample 100% of requests - downrate in production, see https://opentelemetry.io/docs/concepts/sampling/
+      samplingRate: 100
+      provider:
+        host: otel-collector.wac-hospital
+        port: 4317
+        type: OpenTelemetry

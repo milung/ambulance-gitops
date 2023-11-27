@@ -13,6 +13,7 @@ resources:
 - ../../../infrastructure/fluentbit
 - ../../../infrastructure/prometheus
 - ../../../infrastructure/grafana
+- ../../../infrastructure/jaegertracing
   
 patches: 
 - path: patches/ufe-controller.service.yaml    # úprava služby ufe-controller
