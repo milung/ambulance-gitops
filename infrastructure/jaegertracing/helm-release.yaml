@@ -43,6 +43,7 @@ spec:
             port: 4318
     query:
       enabled: true
+      basePath: /jaeger
       extraEnv:
         - name: SPAN_STORAGE_TYPE
           value: opensearch

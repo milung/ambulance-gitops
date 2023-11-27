@@ -9,6 +9,6 @@ spec:
       # sample 100% of requests - downrate in production, see https://opentelemetry.io/docs/concepts/sampling/
       samplingRate: 100
       provider:
-        host: otel-collector.wac-hospital
+        host: jaeger-collector.wac-hospital
         port: 4317
         type: OpenTelemetry

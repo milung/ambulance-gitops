@@ -1,17 +1,17 @@
 apiVersion: fe.milung.eu/v1
 kind: WebComponent
 metadata:
-  name: grafana
+  name: jaeger
 spec:
   module-uri: built-in
   navigation:
   - attributes:
     - name: src
-      value: /grafana
-    details: Aktuálny operačný stav systému
+      value: /jaeger
+    details: Analýza spracovania požiadaviek v distribuovanom systéme
     element: ufe-frame
     path: grafana
     priority: 0
-    title: System Dashboards
+    title: Distribuované trasovanie
   preload: false
   proxy: true
