@@ -11,6 +11,7 @@ resources:
 - ../../../apps/pfx-ambulance-webapi
 - ../../../apps/mongo-express
 - ../../../apps/http-echo
+- ../../../apps/observability-webc
 
 components: 
 - ../../../components/version-developers
