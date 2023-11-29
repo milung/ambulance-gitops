@@ -8,3 +8,5 @@ resources:
 - monitoring-opensearch.http-route.yaml
 - grafana.webcomponent.yaml
 - grafana.http-route.yaml
+- jaeger-query.webcomponent.yaml
+- jaeger-query.http-route.yaml

@@ -15,7 +15,6 @@ spec:
         namespace: wac-hospital
       interval: 1m
       reconcileStrategy: Revision
-  # to configure jaeger in production see https://github.com/jaegertracing/helm-charts/blob/main/charts/jaeger/values.yaml
   values:
     provisionDataStore:
       cassandra: false

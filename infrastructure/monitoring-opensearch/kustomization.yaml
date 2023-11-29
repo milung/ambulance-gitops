@@ -12,5 +12,3 @@ resources:
 - pvc.yaml
 - dashboards.deployment.yaml
 - dashboards.service.yaml
-- http-route.yaml
-- webcomponent.yaml

@@ -10,7 +10,7 @@ spec:
       value: /jaeger
     details: Analýza spracovania požiadaviek v distribuovanom systéme
     element: ufe-frame
-    path: grafana
+    path: jaeger
     priority: 0
     title: Distribuované trasovanie
   preload: false
