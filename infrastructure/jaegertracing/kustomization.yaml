@@ -6,5 +6,3 @@ namespace: wac-hospital
 resources:
 - helm-repository.yaml
 - helm-release.yaml
-- http-route.yaml
-- webcomponent.yaml
