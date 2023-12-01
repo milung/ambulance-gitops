@@ -12,7 +12,7 @@ spec:
             - name: OTEL_TRACES_EXPORTER
               value: otlp
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
-              value: jaeger-collector.wac-hospital:4317
+              value: http://jaeger-collector.wac-hospital:4317
             - name: OTEL_EXPORTER_OTLP_TRACES_INSECURE
               value: "true"
             - name: OTEL_EXPORTER_OTLP_PROTOCOL
