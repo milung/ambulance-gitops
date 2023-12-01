@@ -13,6 +13,12 @@ spec:
         - name: grafana
           image: grafana/grafana:latest
           imagePullPolicy: IfNotPresent
+          env: 
+            # workaround for issue https://github.com/grafana/grafana/issues/58608
+            - name: JAEGER_AGENT_HOST
+              value: ""
+            - name: JAEGER_AGENT_PORT
+              value: ""
           ports:
             - containerPort: 3000
               name: http-grafana
