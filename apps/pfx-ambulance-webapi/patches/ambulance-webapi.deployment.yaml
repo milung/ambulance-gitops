@@ -6,12 +6,9 @@ spec:
   template:
     spec:
       containers:
-        - name: openapi-ui
+        - name: milung-ambulance-wl-webapi-container
           env:
-            - name: URL
-              value: /milung-openapi
-            - name: BASE_URL
-              value: /milung-openapi-ui
+            
             - name: OTEL_TRACES_EXPORTER
               value: otlp
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
@@ -23,4 +20,9 @@ spec:
             - name: OTEL_TRACES_SAMPLER
               # see https://opentelemetry.io/docs/concepts/sdk-configuration/general-sdk-configuration/#otel_traces_sampler
               value: "parentbased_always_on"
-
+        - name: openapi-ui
+          env:
+            - name: URL
+              value: /milung-openapi
+            - name: BASE_URL
+              value: /milung-openapi-ui
