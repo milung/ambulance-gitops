@@ -20,8 +20,6 @@ spec:
       cassandra: false
     storage:
       type: opensearch
-    agent:
-      enabled: false
     collector:
       enabled: true
       extraEnv:
