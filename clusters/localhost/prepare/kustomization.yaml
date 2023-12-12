@@ -14,6 +14,7 @@ resources:
 - ../../../infrastructure/prometheus
 - ../../../infrastructure/grafana
 - ../../../infrastructure/jaegertracing
-  
+- ../../../infrastructure/linkerd
+
 patches: 
 - path: patches/ufe-controller.service.yaml    # úprava služby ufe-controller

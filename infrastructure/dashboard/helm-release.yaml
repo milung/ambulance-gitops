@@ -1,0 +1,26 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kubernetes-dashboard
+  namespace: wac-hospital
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: kubernetes-dashboard
+      sourceRef:
+        kind: HelmRepository
+        name: kubernetes-dashboard
+        namespace: wac-hospital
+      interval: 1m
+      reconcileStrategy: Revision
+  values:
+    extraArgs:
+    - --enable-skip-login
+    - --enable-insecure-login
+    - --disable-settings-authorizer
+    - --system-banner="Welcome to SCIDA Kubernetes"
+    metrics-scrapper:
+      enabled: true
+    protocolHttp: true
+

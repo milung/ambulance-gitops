@@ -19,4 +19,3 @@ spec:
     prometheus-node-exporter:
       hostRootFsMount:
         mountPropagation: false # required on docker-desktop kluster 
-      

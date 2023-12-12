@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: linkerd-crds
+  namespace: linkerd
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: linkerd-crds
+      sourceRef:
+        kind: HelmRepository
+        name: linkerd
+        namespace: linkerd
+      interval: 1m
+      reconcileStrategy: Revision
+  values:
+    # we already have Gateway API subsystem installed
+    enableHttpRoutes: false
+

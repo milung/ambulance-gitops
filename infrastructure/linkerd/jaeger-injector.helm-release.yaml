@@ -1,0 +1,31 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: linkerd-jaeger-injector
+  namespace: linkerd
+spec:
+  interval: 1m
+  dependsOn:  
+  - name: linkerd-control-plane
+  chart:
+    spec:
+      chart: linkerd-jaeger
+      sourceRef:
+        kind: HelmRepository
+        name: linkerd
+        namespace: linkerd
+      interval: 1m
+      reconcileStrategy: Revision
+  values:
+    # we already have Jaeger collector, installing only jaeger injector webhook
+    # to ensure linkerd proxies are configured to send traces to existing collector
+    collector:
+      enabled: false
+    jaeger:
+      enabled: false
+    webhook:
+      collectorSvcAddr: "jaeger-collector.wac-hospital:14268"
+      collectorSvcName: jaeger-collector.wac-hospital
+    
+    
+
