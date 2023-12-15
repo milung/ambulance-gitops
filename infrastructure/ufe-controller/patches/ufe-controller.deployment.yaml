@@ -6,7 +6,7 @@ spec:
   template: 
     metadata:
       annotations:
-        linkerd.io/inject: disabled
+        linkerd.io/inject: enabled
     spec:
       containers:
       - name: ufe-controller
