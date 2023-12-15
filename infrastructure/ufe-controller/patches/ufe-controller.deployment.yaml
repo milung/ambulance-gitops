@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ufe-controller
-  annotations:
-    linkerd.io/inject: disabled
 spec:
   template: 
+    metadata:
+      annotations:
+        linkerd.io/inject: disabled
     spec:
       containers:
       - name: ufe-controller
