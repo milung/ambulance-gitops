@@ -4,9 +4,6 @@ metadata:
   name: ufe-controller
 spec:
   template: 
-    metadata:
-      annotations:
-        linkerd.io/inject: enabled
     spec:
       containers:
       - name: ufe-controller
