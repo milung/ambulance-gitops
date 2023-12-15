@@ -14,7 +14,7 @@ spec:
     metadata:
       labels: 
         pod: milung-ambulance-ufe-label    # štítky podu
-        annotations:
+       annotations:
           linkerd.io/inject: enabled
     spec:
       containers:
