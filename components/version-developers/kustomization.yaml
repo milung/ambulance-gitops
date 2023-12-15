@@ -6,7 +6,7 @@ images:
   newTag: main.20231201.0720 # {"$imagepolicy": "wac-hospital:ambulance-webapi:tag"}
 - name: milung/ambulance-ufe
   newName: milung/ambulance-ufe # {"$imagepolicy":  "wac-hospital:ambulance-ufe:name"}
-  newTag: main.20231120.1356 # {"$imagepolicy": "wac-hospital:ambulance-ufe:tag"}
+  newTag: main.20231215.1159 # {"$imagepolicy": "wac-hospital:ambulance-ufe:tag"}
 - name: milung/ufe-controller
   newName: milung/ufe-controller # {"$imagepolicy":  "wac-hospital:ufe-controller:name"}
   newTag: 1.7.2 # {"$imagepolicy": "wac-hospital:ufe-controller:tag"}
