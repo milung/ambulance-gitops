@@ -23,8 +23,6 @@ resources:
 
 
 configMapGenerator:
-- name: linkerd-config
-  namespace: linkerd
-  behavior: merge
+- name: collector-config-value
   files:
   - collector-config=params/collector-config.yaml
