@@ -16,20 +16,17 @@ spec:
         namespace: linkerd
       interval: 1m
       reconcileStrategy: Revision
+  values:
+    prometheusUrl: http://prometheus-server.wac-hospital
+    identity:
+      issuer:
+        scheme: kubernetes.io/tls
   valuesFrom:
-  # self generated identity certificates
+    # identity trust anchor certificate (shared accross clusters)
   - kind: Secret
-    name: linkerd-control-plane-values
-    valuesKey: linkerd-ca.crt
+    name: linkerd-trust-anchor
+    valuesKey: tls.crt
     targetPath: identityTrustAnchorsPEM
-  - kind: Secret
-    name: linkerd-control-plane-values
-    valuesKey: linkerd-issuer.crt
-    targetPath: identity.issuer.tls.crtPEM
-  - kind: Secret
-    name: linkerd-control-plane-values
-    valuesKey: linkerd-issuer.key
-    targetPath: identity.issuer.tls.keyPEM
-    
+
 
 
