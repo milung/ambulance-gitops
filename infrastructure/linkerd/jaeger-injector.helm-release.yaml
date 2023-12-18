@@ -21,6 +21,7 @@ spec:
       enabled: false
     webhook: 
       externalSecret: true
+      logLevel: debug
       injectCaFrom: linkerd/webhook-issuer-tls
     collector:
       # one of the shortcomming of helm is that you are limited 
