@@ -24,5 +24,7 @@ resources:
 
 configMapGenerator:
 - name: collector-config-value
+  options: 
+    disableNameSuffixHash: true
   files:
   - collector-config=params/collector-config.yaml
