@@ -8,11 +8,13 @@ resources:
 #certificates for linkerd
 - control-plane.certificate.yaml
 - control-plane.issuer.yaml
+- webhook-issuer.certificate.yaml
+- webhook-issuer.issuer.yaml
 - policy-validator.certificate.yaml
 - proxy-injector.certificate.yaml
 - sp-validator.certificate.yaml
-- webhook-issuer.certificate.yaml
-- webhook-issuer.issuer.yaml
+- jaeger-injector.certificate.yaml
+
 #helm
 - helm-repository.yaml
 - crds.helm-release.yaml
