@@ -5,7 +5,7 @@ namespace: linkerd
 
 resources:
 - namespace.yaml
--control-plane.issuer.yaml
+- control-plane.issuer.yaml
 - helm-repository.yaml
 - crds.helm-release.yaml
 - control-plane.helm-release.yaml
