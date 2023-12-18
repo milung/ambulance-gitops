@@ -17,18 +17,6 @@ spec:
       interval: 1m
       reconcileStrategy: Revision
   values:
-    # we already have Jaeger collector, installing only jaeger injector webhook
-    # to ensure linkerd proxies are configured to send traces to existing collector
-    collector:
-      enabled: true
-      # config:
-      #   exporters:
-      #     otlp/jaeger:
-      #       endpoint: jaeger-collector.wac-hospital:4317
-      #       tls:
-      #         insecure: true
-      #   service:
-      #     exporters: ["otlp/jaeger"]
     jaeger:
       enabled: false
   valuesFrom:
@@ -36,6 +24,9 @@ spec:
     name: webhook-issuer-tls
     valuesKey: tls.crt
     targetPath: webhook.caBundle
-    
-    
+  - kind: ConfigMap
+    name: collector-config-value
+    valuesKey: collector-config
+    targetPath: collector.config
+
 

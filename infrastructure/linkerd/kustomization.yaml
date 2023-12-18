@@ -19,6 +19,7 @@ resources:
 - helm-repository.yaml
 - crds.helm-release.yaml
 - control-plane.helm-release.yaml
+- collector-config-value.configmap.yaml
 - jaeger-injector.helm-release.yaml
 
 
