@@ -8,7 +8,7 @@ resources:
 - helm-repository.yaml
 - crds.helm-release.yaml
 - control-plane.helm-release.yaml
-# - jaeger-injector.helm-release.yaml
+- jaeger-injector.helm-release.yaml
 
 
  
