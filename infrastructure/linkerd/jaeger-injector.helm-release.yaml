@@ -21,14 +21,14 @@ spec:
     # to ensure linkerd proxies are configured to send traces to existing collector
     collector:
       enabled: true
-      config:
-        exporters:
-          otlp/jaeger:
-            endpoint: jaeger-collector.wac-hospital:4317
-            tls:
-              insecure: true
-        service:
-          exporters: ["otlp/jaeger"]
+      # config:
+      #   exporters:
+      #     otlp/jaeger:
+      #       endpoint: jaeger-collector.wac-hospital:4317
+      #       tls:
+      #         insecure: true
+      #   service:
+      #     exporters: ["otlp/jaeger"]
     jaeger:
       enabled: false
   valuesFrom:
