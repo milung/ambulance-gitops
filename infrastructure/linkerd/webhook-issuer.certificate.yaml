@@ -4,8 +4,8 @@ metadata:
   name: webhook-issuer-tls
 spec:
   secretName: webhook-issuer-tls
-  duration: 365d
-  renewBefore: 100d
+  duration: 8760h #365 days
+  renewBefore: 240h # 10 days
   issuerRef:
     name: linkerd-trust-anchor 
     kind: Issuer
