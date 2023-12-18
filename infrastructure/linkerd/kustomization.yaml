@@ -5,11 +5,18 @@ namespace: linkerd
 
 resources:
 - namespace.yaml
+#certificates for linkerd
 - control-plane.issuer.yaml
+- policy-validator.certificate.yaml
+- proxy-injector.certificate.yaml
+- sp-validator.certificate.yaml
+- webhook-issuer.certificate.yaml
+- webhook-issuer.issuer.yaml
+#helm
 - helm-repository.yaml
 - crds.helm-release.yaml
 - control-plane.helm-release.yaml
-#- jaeger-injector.helm-release.yaml
+- jaeger-injector.helm-release.yaml
 
 
  
