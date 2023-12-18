@@ -6,6 +6,7 @@ namespace: linkerd
 resources:
 - namespace.yaml
 #certificates for linkerd
+- control-plane.certificate.yaml
 - control-plane.issuer.yaml
 - policy-validator.certificate.yaml
 - proxy-injector.certificate.yaml
