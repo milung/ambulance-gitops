@@ -21,10 +21,3 @@ resources:
 - control-plane.helm-release.yaml
 - jaeger-injector.helm-release.yaml
 
-
-configMapGenerator:
-- name: collector-config-value
-  options: 
-    disableNameSuffixHash: true
-  files:
-  - collector-config=params/collector-config.yaml
