@@ -26,6 +26,12 @@ spec:
     webhook:
       collectorSvcAddr: "jaeger-collector.wac-hospital:14268"
       collectorSvcName: jaeger-collector.wac-hospital
+      externalSecret: true
+  valuesFrom:
+  - kind: Secret
+    name: webhook-issuer-tls
+    valuesKey: tls.crt
+    targetPath: webhook.caBundle
     
     
 
