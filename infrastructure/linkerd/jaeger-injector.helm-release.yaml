@@ -20,13 +20,17 @@ spec:
     # we already have Jaeger collector, installing only jaeger injector webhook
     # to ensure linkerd proxies are configured to send traces to existing collector
     collector:
-      enabled: false
+      enabled: true
+      config:
+        exporters:
+          otlp/jaeger:
+            endpoint: jaeger-collector.wac-hospital:4317
+            tls:
+              insecure: true
+        service:
+          exporters: ["otlp/jaeger"]
     jaeger:
       enabled: false
-    webhook:
-      collectorSvcAddr: "jaeger-collector.wac-hospital:14268"
-      collectorSvcName: jaeger-collector.wac-hospital
-      externalSecret: true
   valuesFrom:
   - kind: Secret
     name: webhook-issuer-tls
