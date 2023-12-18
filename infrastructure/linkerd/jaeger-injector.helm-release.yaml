@@ -19,6 +19,9 @@ spec:
   values:
     jaeger:
       enabled: false
+    webhook: 
+      externalSecret: true
+      injectCaFrom: webhook-issuer-tls
     collector:
       # one of the shortcomming of helm is that you are limited 
       # by custom ways of passing values
@@ -52,10 +55,10 @@ spec:
               receivers: [otlp,opencensus,zipkin,jaeger]
               processors: [batch]
               exporters: ["otlp/jaeger"]
-  valuesFrom:
-  - kind: Secret
-    name: webhook-issuer-tls
-    valuesKey: tls.crt
-    targetPath: webhook.caBundle
+  # valuesFrom:
+  # - kind: Secret
+  #   name: webhook-issuer-tls
+  #   valuesKey: tls.crt
+  #   targetPath: webhook.caBundle
   
 
