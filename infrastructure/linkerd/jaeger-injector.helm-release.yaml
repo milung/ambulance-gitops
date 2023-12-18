@@ -45,7 +45,7 @@ spec:
           health_check:
         exporters:
           otlp/jaeger:
-            endpoint: jaeger.wac-hospital:4317
+            endpoint: jaeger-collector.wac-hospital:4317
             tls:
               insecure: true
         service:
