@@ -6,6 +6,7 @@ spec:
   interval: 1m
   dependsOn:  
   - name: linkerd-control-plane
+    namespace: linkerd
   chart:
     spec:
       chart: linkerd-viz
