@@ -5,6 +5,7 @@ namespace: linkerd
 
 resources:
 - namespace.yaml
+- viz.namespace.yaml
 #certificates for linkerd
 - control-plane.certificate.yaml
 - control-plane.issuer.yaml
