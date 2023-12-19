@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: linkerd-tap-injector
+spec:
+  secretName: tap-injector-k8s-tls
+  duration: 24h
+  renewBefore: 1h
+  issuerRef:
+    name: webhook-issuer
+    kind: ClusterIssuer
+  commonName: tap-injector.linkerd-viz.svc
+  dnsNames:
+  - tap-injector.linkerd-viz.svc
+  isCA: false
+  privateKey:
+    algorithm: ECDSA
+  usages:
+  - server auth

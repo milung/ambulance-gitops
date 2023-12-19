@@ -5,7 +5,7 @@ namespace: linkerd
 
 resources:
 - namespace.yaml
-- viz.namespace.yaml
+# - viz.namespace.yaml
 #certificates for linkerd
 - control-plane.certificate.yaml
 - control-plane.issuer.yaml
@@ -14,8 +14,8 @@ resources:
 - policy-validator.certificate.yaml
 - proxy-injector.certificate.yaml
 - sp-validator.certificate.yaml
-- tap.certificate.yaml
-- viz.certificate.yaml
+# - tap.certificate.yaml
+# - viz.certificate.yaml
 # - jaeger-injector.certificate.yaml
 
 #helm
@@ -23,5 +23,5 @@ resources:
 - crds.helm-release.yaml
 - control-plane.helm-release.yaml
 # - jaeger-injector.helm-release.yaml
-- viz.helm-release.yaml
+# - viz.helm-release.yaml
 

@@ -15,6 +15,7 @@ resources:
 - ../../../infrastructure/grafana
 - ../../../infrastructure/jaegertracing
 - ../../../infrastructure/linkerd
+- ../../../infrastructure/linkerd-viz
 
 patches: 
 - path: patches/ufe-controller.service.yaml    # úprava služby ufe-controller
