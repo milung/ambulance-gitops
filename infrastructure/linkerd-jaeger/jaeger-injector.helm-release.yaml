@@ -7,6 +7,7 @@ spec:
   interval: 1m
   dependsOn:  
   - name: linkerd-control-plane
+    namespace: linkerd
   chart:
     spec:
       chart: linkerd-jaeger
@@ -22,7 +23,7 @@ spec:
     webhook: 
       externalSecret: true
       logLevel: debug
-      injectCaFrom: linkerd/webhook-issuer-tls
+      injectCaFrom: linkerd-jaeger/webhook-issuer-tls
     collector:
       # one of the shortcomming of helm is that you are limited 
       # by custom ways of passing values

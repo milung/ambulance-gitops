@@ -6,7 +6,7 @@ spec:
   interval: 1m
   dependsOn:  
   - name: linkerd-control-plane
-  targetNamespace: linkerd-viz
+    namespace: linkerd
   chart:
     spec:
       chart: linkerd-viz
@@ -21,8 +21,8 @@ spec:
     jaegerUrl: http://jaeger-collector.wac-hospital
     tap:
       externalSecret: true
-      injectCaFrom: webhook-issuer-tls
+      injectCaFrom: linkerd-viz/webhook-issuer-tls
     tapInjector:
       externalSecret: true
-      injectCaFrom: webhook-issuer-tls
+      injectCaFrom: linkerd-viz/webhook-issuer-tls
 

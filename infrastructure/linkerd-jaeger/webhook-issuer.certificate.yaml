@@ -1,0 +1,22 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: webhook-issuer-tls
+spec:
+  secretName: webhook-issuer-tls
+  duration: 8760h #365 days
+  renewBefore: 240h # 10 days
+  issuerRef:
+    name: linkerd-trust-anchor 
+    kind: ClusterIssuer
+  commonName: webhook.linkerd.cluster.local
+  dnsNames:
+  - webhook.linkerd.cluster.local
+  isCA: true
+  privateKey:
+    algorithm: ECDSA
+  usages:
+  - cert sign
+  - crl sign
+  - server auth
+  - client auth
