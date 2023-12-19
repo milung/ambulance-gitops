@@ -39,9 +39,9 @@ spec:
       injectCaFrom: linkerd/webhook-issuer-tls
   valuesFrom:
     # identity trust anchor certificate (shared accross clusters)
-  - kind: Secret
+  - kind: ConfigMap
     name: linkerd-trust-anchor
-    valuesKey: tls.crt
+    valuesKey: ca.crt
     targetPath: identityTrustAnchorsPEM
   
 
