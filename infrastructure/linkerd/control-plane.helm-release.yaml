@@ -23,30 +23,19 @@ spec:
         scheme: kubernetes.io/tls
     policyValidator: 
       externalSecret: true 
+      injectCaFrom: linkerd/webhook-issuer-tls
     proxyInjector:
       externalSecret: true
+      injectCaFrom: linkerd/webhook-issuer-tls
     profileValidator:
       externalSecret: true 
+      injectCaFrom: linkerd/webhook-issuer-tls
   valuesFrom:
     # identity trust anchor certificate (shared accross clusters)
   - kind: Secret
     name: linkerd-trust-anchor
     valuesKey: tls.crt
     targetPath: identityTrustAnchorsPEM
-
-    # webhooks trust CA certificate
-  - kind: Secret
-    name: webhook-issuer-tls
-    valuesKey: tls.crt
-    targetPath: policyValidator.caBundle
-  - kind: Secret
-    name: webhook-issuer-tls
-    valuesKey: tls.crt
-    targetPath: proxyInjector.caBundle
-  - kind: Secret
-    name: webhook-issuer-tls
-    valuesKey: tls.crt
-    targetPath: profileValidator.caBundle
   
 
 
