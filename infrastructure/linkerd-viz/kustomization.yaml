@@ -5,6 +5,8 @@ namespace: linkerd-viz
 
 resources:
 - namespace.yaml
+- webhook-issuer.certificate.yaml
+- webhook-issuer.issuer.yaml
 - tap.certificate.yaml
 - viz.certificate.yaml
 - viz.helm-release.yaml
