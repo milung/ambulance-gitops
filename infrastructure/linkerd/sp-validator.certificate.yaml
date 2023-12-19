@@ -8,7 +8,7 @@ spec:
   renewBefore: 1h
   issuerRef:
     name: webhook-issuer
-    kind: Issuer
+    kind: ClusterIssuer
   commonName: linkerd-sp-validator.linkerd.svc
   dnsNames:
   - linkerd-sp-validator.linkerd.svc

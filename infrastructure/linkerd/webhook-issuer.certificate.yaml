@@ -8,7 +8,7 @@ spec:
   renewBefore: 240h # 10 days
   issuerRef:
     name: linkerd-trust-anchor 
-    kind: Issuer
+    kind: ClusterIssuer
   commonName: webhook.linkerd.cluster.local
   dnsNames:
   - webhook.linkerd.cluster.local

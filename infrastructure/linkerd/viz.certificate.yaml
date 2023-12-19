@@ -9,7 +9,7 @@ spec:
   renewBefore: 1h
   issuerRef:
     name: webhook-issuer
-    kind: Issuer
+    kind: ClusterIssuer
   commonName: tap.linkerd-viz.svc
   dnsNames:
   - tap.linkerd-viz.svc

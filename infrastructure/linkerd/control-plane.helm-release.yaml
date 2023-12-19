@@ -30,13 +30,13 @@ spec:
         scheme: kubernetes.io/tls
     policyValidator: 
       externalSecret: true 
-      injectCaFrom: linkerd/webhook-issuer-tls
+      injectCaFrom: webhook-issuer-tls
     proxyInjector:
       externalSecret: true
-      injectCaFrom: linkerd/webhook-issuer-tls
+      injectCaFrom: webhook-issuer-tls
     profileValidator:
       externalSecret: true 
-      injectCaFrom: linkerd/webhook-issuer-tls
+      injectCaFrom: webhook-issuer-tls
   valuesFrom:
     # identity trust anchor certificate (shared accross clusters)
   - kind: Secret
