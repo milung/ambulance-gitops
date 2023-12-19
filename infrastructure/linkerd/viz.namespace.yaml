@@ -1,0 +1,8 @@
+apiVersion: v1
+metadata:
+  name: linkerd-viz
+  labels:
+    linkerd.io/extension: viz
+    pod-security.kubernetes.io/enforce: privileged
+  annotations:
+    viz.linkerd.io/external-prometheus: http://prometheus-server.wac-hospital
