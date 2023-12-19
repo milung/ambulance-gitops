@@ -17,6 +17,13 @@ spec:
       interval: 1m
       reconcileStrategy: Revision
   values:
+    proxy: 
+      logLevel: warn,linkerd=debug,trust_dns=error
+    proxyInit:
+      # docker container runtime, 
+      # see https://linkerd.io/2.14/tasks/troubleshooting/#l5d-proxy-init-run-as-root
+      runAsRoot: true
+
     prometheusUrl: http://prometheus-server.wac-hospital
     identity:
       issuer:
