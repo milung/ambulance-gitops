@@ -10,3 +10,5 @@ resources:
 - grafana.http-route.yaml
 - jaeger-query.webcomponent.yaml
 - jaeger-query.http-route.yaml
+- linkerd-viz.webcomponent.yaml
+- linkerd-viz.http-route.yaml

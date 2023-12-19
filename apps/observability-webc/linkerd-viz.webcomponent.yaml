@@ -1,0 +1,17 @@
+apiVersion: fe.milung.eu/v1
+kind: WebComponent
+metadata:
+  name: linkerd-viz
+spec:
+  module-uri: built-in
+  navigation:
+  - attributes:
+    - name: src
+      value: /viz
+    details: Analýza spracovania požiadaviek v distribuovanom systéme
+    element: ufe-frame
+    path: viz
+    priority: 0
+    title: Distribuované trasovanie
+  preload: false
+  proxy: true
