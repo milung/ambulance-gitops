@@ -6,3 +6,4 @@ metadata:
 spec:
   ca:
     secretName: linkerd-trust-anchor
+    
