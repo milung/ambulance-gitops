@@ -12,6 +12,6 @@ spec:
     element: ufe-frame
     path: viz
     priority: 0
-    title: Distribuované trasovanie
+    title: Service Mesh Dashboard 
   preload: false
   proxy: true
