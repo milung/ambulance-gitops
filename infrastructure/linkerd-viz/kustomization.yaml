@@ -10,4 +10,5 @@ resources:
 - tap.certificate.yaml
 - viz.certificate.yaml
 - helm-release.yaml
+- linkerd-viz.http-route.yaml
 

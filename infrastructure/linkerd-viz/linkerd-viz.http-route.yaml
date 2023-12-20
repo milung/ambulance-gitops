@@ -9,10 +9,9 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /viz
+            value: /linkerd
       backendRefs:
         - group: ""
           kind: Service
           name: web
-          namespace: linkerd-viz
           port: 8084

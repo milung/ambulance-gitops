@@ -11,4 +11,4 @@ resources:
 - jaeger-query.webcomponent.yaml
 - jaeger-query.http-route.yaml
 - linkerd-viz.webcomponent.yaml
-- linkerd-viz.http-route.yaml
+#- linkerd-viz.http-route.yaml
