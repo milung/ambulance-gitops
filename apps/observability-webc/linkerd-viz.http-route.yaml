@@ -13,6 +13,6 @@ spec:
       backendRefs:
         - group: ""
           kind: Service
-          name: http-echo
-          #namespace: linkerd-viz
-          port: 80
+          name: web
+          namespace: linkerd-viz
+          port: 8084
